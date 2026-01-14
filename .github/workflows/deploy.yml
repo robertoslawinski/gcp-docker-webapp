@@ -1,0 +1,43 @@
+name: Deploy to GCP VM (Docker)
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            set -e
+
+            # Ensure folder exists
+            mkdir -p ~/deployments/gcp-docker-webapp
+            cd ~/deployments/gcp-docker-webapp
+
+            # Clone once; then pull updates
+            if [ ! -d ".git" ]; then
+              git clone https://github.com/${{ github.repository }} .
+            else
+              git pull origin main
+            fi
+
+            # Build new image
+            docker build -t my-web-app:latest .
+
+            # Replace container
+            docker rm -f my-web-app-container || true
+            docker run -d -p 80:80 --name my-web-app-container my-web-app:latest
+
+            # Show running containers
+            docker ps | head -n 5
