@@ -1,10 +1,106 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My First Cloud App</title>
-  </head>
-  <body>
-    <h1>Aplicação rodando na Google Cloud 🚀</h1>
-    <p>Docker + VM funcionando com sucesso.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Deployment Project | Roberto Slawinski</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: #e5e7eb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 48px;
+      max-width: 720px;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+      color: #38bdf8;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      color: #cbd5f5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .box {
+      background: #020617;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.25);
+    }
+
+    .box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #38bdf8;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Cloud Deployment Project</h1>
+    <h2>Automated CI/CD Pipeline on Google Cloud</h2>
+
+    <div class="grid">
+      <div class="box"><strong>Cloud</strong> Google Cloud Platform</div>
+      <div class="box"><strong>Compute</strong> VM + Linux</div>
+      <div class="box"><strong>Containers</strong> Docker</div>
+      <div class="box"><strong>Web</strong> Nginx</div>
+      <div class="box"><strong>CI/CD</strong> GitHub Actions</div>
+      <div class="box"><strong>Security</strong> SSH & Firewall</div>
+    </div>
+
+    <footer>
+      Deployed by Roberto Slawinski · 2026 · Continuous Delivery in action 🚀
+    </footer>
+  </div>
+</body>
 </html>
