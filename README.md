@@ -1,5 +1,4 @@
 🚀 Cloud Deployment Project — CI/CD on Google Cloud
-🧱 Architecture Overview
 Developer → GitHub → GitHub Actions → SSH → Google Cloud VM → Docker → Nginx → Web App
 
 🛠️ Technologies Used
